@@ -4,6 +4,7 @@
 from orbit import ISS
 from picamera import PiCamera
 from pathlib import Path
+from time import sleep
 
 def convert(angle):
     """
@@ -39,4 +40,8 @@ cam = PiCamera()
 cam.resolution = (1296,972)
 
 base_folder = Path(__file__).parent.resolve()
-capture(cam, f"{base_folder}/gps1.jpg")
+n = 0
+while True:
+    capture(cam, f"{base_folder}/gps{n}.jpg")
+    n = n+1
+    sleep(3.6)
