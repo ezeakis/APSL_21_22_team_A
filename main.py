@@ -1,10 +1,12 @@
 #We based our code on this page
 #https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment/5
-
+#https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment/7
+    
 from orbit import ISS
 from picamera import PiCamera
 from pathlib import Path
 from time import sleep
+from datetime import datetime, timedelta
 
 def convert(angle):
     """
@@ -39,9 +41,17 @@ def capture(camera, image):
 cam = PiCamera()
 cam.resolution = (1296,972)
 
+# Create a `datetime` variable to store the start time
+start_time = datetime.now()
+# Create a `datetime` variable to store the current time
+# (these will be almost the same at the start)
+now_time = datetime.now()
+
 base_folder = Path(__file__).parent.resolve()
 n = 0
-while True:
+while (now_time < start_time + timedelta(minutes=175)):
     capture(cam, f"{base_folder}/gps{n}.jpg")
     n = n+1
     sleep(3.6)
+    # Update the current time
+    now_time = datetime.now()    
