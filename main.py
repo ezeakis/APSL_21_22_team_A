@@ -22,7 +22,7 @@ def convert(angle):
     return sign < 0, exif_angle
 
 def capture(camera, image):
-    """Use `camera` to capture an `image` file with lat/long EXIF data."""
+    #Use `camera` to capture an `image` file with lat/long EXIF data.
     point = ISS.coordinates()
 
     # Convert the latitude and longitude to EXIF-appropriate representations
