@@ -18,6 +18,6 @@ https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-spac
 
 for running the program under 3 hours.
 
-Let's suppose that each photo is 1 MB. Then for 3 GBs we will need 3000 photos.
+Let's suppose that each photo is 4 MB. Then for 3 GBs we will need 750 photos.
 
-3 hours are 10800 secs. So we need a photo every 3.6 sec.
+3 hours are 10800 secs. So we need a photo every 15 sec.
