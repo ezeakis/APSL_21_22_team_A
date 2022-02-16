@@ -6,9 +6,9 @@ print(exif_data)
 
 
 
-import exifread
-# Open image file for reading (binary mode)
-f = open('gps0.jpg', 'rb')
-
-# Return Exif tags
-tags = exifread.process_file(f)
+import PIL.ExifTags
+exif = {
+    PIL.ExifTags.TAGS[k]: v
+    for k, v in img._getexif().items()
+    if k in PIL.ExifTags.TAGS
+}
