@@ -52,6 +52,6 @@ n = 0
 while (now_time < start_time + timedelta(minutes=175)):
     capture(cam, f"{base_folder}/gps{n}.jpg")
     n = n+1
-    sleep(3.6)
+    sleep(15)
     # Update the current time
     now_time = datetime.now()    
