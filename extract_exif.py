@@ -8,7 +8,7 @@ print(exif_data)
 
 from PIL import Image, ExifTags
 
-img = Image.open("sample.jpg")
+img = Image.open("gps0.jpg")
 img_exif = img.getexif()
 print(type(img_exif))
 # <class 'PIL.Image.Exif'>
